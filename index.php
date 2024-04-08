@@ -1,3 +1,12 @@
+
+ <!-- include() = sao chép nội dung của 1 file (php, html, text)
+ đưa vào trong file php
+ <?php 
+    include("header.html");
+
+
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +74,12 @@
 
     </form> -->
 
-
+    <!-- Include 
+    <hr>
+    This is the home page
+    <br>
+    Stuff about your home page can go here
+    <br>-->
 
 </body>
 </html>
@@ -309,7 +323,7 @@
 ?> -->
 
 
-<?php //sanitize and validate input vệ sinh và xác thực đầu vào trong PHP
+<!-- <?php //sanitize and validate input vệ sinh và xác thực đầu vào trong PHP
     if(isset($_POST["login"])){
         $username = filter_input(INPUT_POST, "age", 
                                 FILTER_SANITIZE_INT); // Loại bỏ các kí tự đặc biệt khi nhập vào từ bàn phím
@@ -321,8 +335,16 @@
 
 
     }
+?> -->
+
+
+<!-- <?php  // include() function footer
+    include("footer.html");
+?> -->
+
+
+<?php
+    // cookie
+    //setcookie("", "", "")
+    setcookie("");
 ?>
-
-
-
-
