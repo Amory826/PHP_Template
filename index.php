@@ -81,6 +81,7 @@
     Stuff about your home page can go here
     <br>-->
 
+
 </body>
 </html>
 
@@ -343,8 +344,50 @@
 ?> -->
 
 
-<?php
-    // cookie
-    //setcookie("", "", "")
-    setcookie("");
+<?php // Cookies và Session trong php
+    // Cookie
+    /* Cần chuyển dữ liệu, lưu dữ liệu cục bộ trên máy
+    và xử lý dữ liệu qua các trang 
+    Được lưu dữ liệu trên máy người dùng, và không bị mất khi thoát trình duyệt.
+    */
+
+    // //setcookie(ten_cookie, giatri_cookie, thời gian hết hạn của cookie(Thường là thời gian thực cộng một số cụ thể_vd: time() + 86400(1 ngày)*bn_ngày), '/')
+    // setcookie('userName', 'Nguyễn Trọng Tuấn', time()+ 86400, '/');
+
+    // // Cách lấy giá trị của cookie $tenBien = $_COOKIE['$ten_cookie'];
+    // $userName = $_COOKIE['userName'];
+    // echo $userName; 
+
+    // // Sửa cookie thì cần set lại cookie giống cú pháp ban đầu là được.
+    
+
+    // // Xóa cookie chỉ cần set thời gian của setcookie về giá trị âm thì cookie sẽ bị xóa.
+    // setcookie('userName', 'Nguyễn Trọng Tuấn', time() - 86400, '/');
+
+
+    // Session
+    // Cần phải khởi tạo session để chạy bằng cách session_start();
+    session_start();
+
+    // Tạo session
+    $_SESSION["useName"] = "Nguyễn Trọng Tuấn";
+    echo $_SESSION["useName"] . "<br>";
+    $_SESSION["color"] = "Green";
+    echo $_SESSION["color"] . "<br>";
+
+
+    // Sửa session bằng cách gán lại giá trị cho session đó
+    $_SESSION["useName"] = "Đào Ngọc Văn";
+    echo $_SESSION["useName"];
+
+    // Xóa hết tất cả các session bằng cách dùng hàm session_unset()
+    session_unset();
+    session_destroy();
+    echo $_SESSION["useName"];
+
+
+    // Xóa 1 session bằng cách dùng hàm unset($_SESSION["ten_session"]);
+    unset($_SESSION["useName"]);
+    echo $_SESSION["useName"];
+
 ?>
